@@ -3,6 +3,7 @@ import { Item } from './interfaces/item.interface';
 
 @Injectable()
 export class ItemsService {
+    //dummy data
     private readonly items: Item[] = [
         {
             id: "adadwsew3232343434",
@@ -18,7 +19,13 @@ export class ItemsService {
         }
     ]
 
+    //find all items
     findAll(): Item[] {
         return this.items;
+    }
+
+    //find one by id
+    findOne(id: string): Item {
+        return this.items.find(item => item.id === id)
     }
 }
